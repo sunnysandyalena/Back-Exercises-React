@@ -1,0 +1,52 @@
+.main {
+  background-color: antiquewhite;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2c194f;
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.control-panel {
+  display: flex;
+  justify-content: center;
+}
+.likes, .trash, .back-btn, .next-btn {
+  margin: 3%;
+}
+.heart, .remove, .back, .next {
+  background-color: transparent;
+  border: none;
+}
+.show {
+  background-color: transparent;
+  color: rgb(13, 13, 65);
+}
+.delete {
+  display: flex;
+  justify-content: center;
+}
+.delete-btn {
+  background-color: transparent;
+  padding: 5px;
+  width: 200px;
+  font-size: 17px;
+  border: 2px solid #2c194f;
+  border-radius: 5px;
+  color: #2c194f;
+}
+.control-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.show {
+  background-color: transparent;
+  border: none;
+  color: #83749e;
+  font-size: 17px;
+  font-weight: bolder;
+}

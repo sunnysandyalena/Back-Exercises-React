@@ -11,19 +11,18 @@ function App() {
 
   const [showMore, setShowMore] = useState(false);
 
-  const [like, setLike] = useState ("LIKE");
-
-  const changeLike = () => {
-    if (like === "LIKE") {
-      setLike ("LIKED")
-    }
-    else {
-      setLike("LIKE")
-    }
-  }
+  const [like, setLike] = useState (false);
 
   const {id, exercise, image, description}=data[exercises];
 
+  const changeLike = () => {
+    if (like === false) {
+      setLike (true)
+    }
+    else {
+      setLike (false)
+    }
+  }
   const previousExercise = () => {
     setExercises((exercises => {
       exercises --;
@@ -48,7 +47,7 @@ function App() {
     <div className='main'>
       <div className='container'>
         <div>
-          <h1>Top {data.length} back exercises at home</h1>
+          <h1>{data.length} back exercises at home</h1>
         </div>
         <div>
           <h2>{id} - {exercise}</h2>
@@ -66,8 +65,7 @@ function App() {
       </div>
       <div className='control-panel'>
         <div className='likes'>
-          <button className='heart' onClick={changeLike}>{setLike ? <Dislike/> : <Like/>}</button>
-          <h3>{like}</h3>
+          <button className='heart' onClick={changeLike}>{like ? <Like/> : <Dislike/>}</button>
         </div>
       </div>
       <div className='delete'>

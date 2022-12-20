@@ -26,6 +26,7 @@ function App() {
   const previousExercise = () => {
     setExercises((exercises => {
       exercises --;
+      setShowMore(false);
       if (exercises < 0) {
         return data.length -1
       }
@@ -36,6 +37,7 @@ function App() {
   const nextExercise = () => {
     setExercises ((exercises => {
       exercises ++;
+      setShowMore(false);
       if (exercises > data.length -1) {
         exercises=0;
       }
@@ -55,7 +57,7 @@ function App() {
         <div>
           <img src = {image} width = '350px' alt = 'Exercise' />
         </div>
-        <div>
+        <div className='text'>
           <p>{showMore ? description : description.substring(0, 150) + "..."} 
             <button className='show' onClick={() => setShowMore(!showMore)}>
             {showMore ? 'show less' : 'show more'}
